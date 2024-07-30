@@ -11,6 +11,10 @@ def generate_qr_code(data):
     buffer.seek(0)
     return buffer
 
+# Inicializar o estado da sessão
+if 'reload' not in st.session_state:
+    st.session_state.reload = False
+
 st.title("QR Code Generator")
 
 # Session state to keep track of the input
@@ -21,11 +25,13 @@ if 'data' not in st.session_state:
 data = st.text_input("Digite para gerar o seu QR Code:", st.session_state.data)
 
 if st.button("Gerar QR Code"):
-    st.session_state.data = data
+    #st.session_state.data = data
+    st.session_state.reload = True
 
 if st.button("Limpar"):
-    data=''
-    st.session_state.data = data
+    #data=''
+    st.session_state.reload = False
+    #st.session_state.data = data
     st.experimental_rerun()  # Rerun the app to clear the input field
     #st.experimental_set_query_params()
 
