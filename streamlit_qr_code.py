@@ -24,8 +24,8 @@ if st.button("Gerar QR Code"):
     st.session_state.data = data
 
 if st.button("Limpar"):
-    data=''
-    st.session_state.data = data
+    #data=''
+    #st.session_state.data = data
     st.experimental_rerun()  # Rerun the app to clear the input field
     #st.experimental_set_query_params()
 
