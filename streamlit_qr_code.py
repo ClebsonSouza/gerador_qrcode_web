@@ -29,9 +29,10 @@ if st.button("Limpar"):
     st.session_state.data = x
     st.session_state.reload = True
 
-    x =''    
-    st.session_state.data = x
-    st.session_state.reload = True
+    st.button("Limpar"):
+        x =''    
+        st.session_state.data = x
+        st.session_state.reload = True
     #st.experimental_rerun()  # Rerun the app to clear the input field
     #st.experimental_set_query_params()
 
